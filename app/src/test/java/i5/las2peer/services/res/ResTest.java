@@ -118,26 +118,23 @@ public class ResTest {
 
   /**
    * 
-   * Test for the NewTestCase_ID921684 method.
+   * Test for the NewTestCase_ID874005 method.
    * 
    */
   @Test
-  public void testNewTestCase_ID921684() {
+  public void testNewTestCase_ID874005() {
     MiniClientCoverage c = new MiniClientCoverage(mainPath);
     c.setConnectorEndpoint(connector.getHttpEndpoint());
     
         
     try {
       c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
-      ClientResponse result = c.sendRequest("GET", "/t", """
+      ClientResponse result = c.sendRequest("GET", "/r", """
 """, "text/plain", "*/*", new HashMap<>(), new Object[0]);
-      System.out.println("Result of request with id: 844015: " + result.getResponse().trim());
+      System.out.println("Result of request with id: 54614: " + result.getResponse().trim());
       Object response = JSONValue.parse(result.getResponse().trim());
-      // Response body has type JSON Array
-      assertThat("[835921]", response, isA(JSONArray.class));
-      
       // Response body has type User
-      assertThat("[8073]", response, );
+      assertThat("[821881]", response, );
       
 
     } catch (Exception e) {
