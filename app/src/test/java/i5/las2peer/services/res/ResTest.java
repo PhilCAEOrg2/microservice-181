@@ -132,11 +132,7 @@ public class ResTest {
       ClientResponse result = c.sendRequest("GET", "/r", """
 """, "text/plain", "*/*", new HashMap<>(), new Object[0]);
       System.out.println("Result of request with id: 54614: " + result.getResponse().trim());
-      Object response = JSONValue.parse(result.getResponse().trim());
-      // Response body has type User
-      assertThat("[821881]", response, );
-      
-
+    
     } catch (Exception e) {
       e.printStackTrace();
       fail("Exception: " + e);
