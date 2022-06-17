@@ -133,6 +133,12 @@ public class ResTest {
 """, "text/plain", "*/*", new HashMap<>(), new Object[0]);
       System.out.println("Result of request with id: 54614: " + result.getResponse().trim());
     
+      Assert.assertEquals("[812980]", 200, result.getHttpCode());
+  Object response = JSONValue.parse(result.getResponse().trim());
+      // Response body has type JSON Object
+      assertThat("[629189]", response, isA(JSONObject.class));
+      
+
     } catch (Exception e) {
       e.printStackTrace();
       fail("Exception: " + e);
